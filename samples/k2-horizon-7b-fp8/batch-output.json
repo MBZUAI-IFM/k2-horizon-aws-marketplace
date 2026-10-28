@@ -1,0 +1,42 @@
+{
+  "id": "chatcmpl-ba4e0a3f9a9ef2ca",
+  "object": "chat.completion",
+  "created": 1793218200,
+  "model": "k2-horizon-7b",
+  "choices": [
+    {
+      "index": 0,
+      "message": {
+        "role": "assistant",
+        "content": "1081",
+        "refusal": null,
+        "annotations": null,
+        "audio": null,
+        "function_call": null,
+        "reasoning": "The user wants me to calculate 23 times 47. Let me do this step by step.\n\n23 × 47\n\nI can break this down:\n23 × 47 = 23 × (40 + 7)\n= 23 × 40 + 23 × 7\n= 920 + 161\n= 1081\n\nOr I could do it another way:\n23 × 47 = 47 × 23\n= 47 × 20 + 47 × 3\n= 940 + 141\n= 1081\n\nOr using the standard algorithm:\n  47\n× 23\n-----\n 141  (47 × 3)\n940   (47 × 20)\n-----\n1081\n\nThe result is 1081."
+      },
+      "logprobs": null,
+      "finish_reason": "stop",
+      "stop_reason": 250019,
+      "token_ids": null,
+      "routed_experts": null
+    }
+  ],
+  "service_tier": null,
+  "system_fingerprint": "vllm-0.32.0-cfa26621",
+  "usage": {
+    "prompt_tokens": 23,
+    "total_tokens": 184,
+    "completion_tokens": 161,
+    "prompt_tokens_details": null,
+    "completion_tokens_details": {
+      "reasoning_tokens": 0
+    }
+  },
+  "prompt_logprobs": null,
+  "prompt_token_ids": null,
+  "prompt_text": null,
+  "kv_transfer_params": null,
+  "ec_transfer_params": null,
+  "metrics": null
+}

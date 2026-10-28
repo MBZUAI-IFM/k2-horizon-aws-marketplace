@@ -116,15 +116,12 @@ def long_document_demo(session, endpoint):
     return response
 
 
-PROFILES = {
-    '32k': {'instance_type': 'ml.g6.2xlarge', 'context_tokens': 32768, 'tensor_parallel': 1},
-    '64k': {'instance_type': 'ml.g6.12xlarge', 'context_tokens': 65536, 'tensor_parallel': 4},
-}
+PROFILES = {'32k': {'instance_type': 'ml.g6.2xlarge', 'context_tokens': 32768, 'tensor_parallel': 1}}
 
 
 def deploy(session, package_arn, role_arn, profile='32k', name=None, resources=None):
     if profile not in PROFILES:
-        raise ValueError('Choose the 32k or 64k profile')
+        raise ValueError('Choose a supported profile: ' + ', '.join(PROFILES))
     recipe=PROFILES[profile]
     sm=session.client('sagemaker');package=sm.describe_model_package(ModelPackageName=package_arn)
     if package['ModelPackageStatus']!='Completed':raise RuntimeError('Package is not ready')

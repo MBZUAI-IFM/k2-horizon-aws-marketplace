@@ -1,0 +1,29 @@
+{
+  "instance_type": "ml.g6.2xlarge",
+  "context_tokens": 32768,
+  "concurrent_sequences": 1,
+  "measurement_scope": "One client-observed streaming request after startup; includes network overhead, not a production percentile or throughput benchmark.",
+  "result": {
+    "message": {
+      "role": "assistant",
+      "content": "1081",
+      "reasoning_content": "The user asks: \"Calculate 23 times 47. Return only the integer result.\"\n\nWe need to multiply 23 * 47.\n\nCompute: 23 * 47 = 23 * (40 + 7) = 23*40 + 23*7 = 920 + 161 = 1081.\n\nCheck: 23 * 47 = 1081. Yes.\n\nThe user wants only the integer result, no extra text. So output \"1081\"."
+    },
+    "usage": {
+      "prompt_tokens": 23,
+      "total_tokens": 125,
+      "completion_tokens": 102,
+      "completion_tokens_details": {
+        "reasoning_tokens": 0
+      }
+    },
+    "finish_reason": "stop",
+    "done": true,
+    "first_generated_delta_seconds": 0.22174687499500578,
+    "complete": true,
+    "elapsed_seconds": 3.9683309579995694,
+    "first_byte_seconds": 0.2204724159964826,
+    "stream_bytes": 23397,
+    "error": null
+  }
+}

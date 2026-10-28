@@ -1,0 +1,17 @@
+{
+  "model": "k2-horizon-7b",
+  "messages": [
+    {
+      "role": "user",
+      "content": "What is 6 + 1? Answer briefly."
+    }
+  ],
+  "max_tokens": 16384,
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "chat_template_kwargs": {
+    "reasoning_effort": "high",
+    "tool_call_format": "xml"
+  },
+  "stream": false
+}

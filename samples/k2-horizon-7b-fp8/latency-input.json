@@ -1,0 +1,20 @@
+{
+  "model": "k2-horizon-7b",
+  "messages": [
+    {
+      "role": "user",
+      "content": "Calculate 23 times 47. Return only the integer result."
+    }
+  ],
+  "max_tokens": 16384,
+  "temperature": 1.0,
+  "top_p": 0.95,
+  "stream": true,
+  "stream_options": {
+    "include_usage": true
+  },
+  "chat_template_kwargs": {
+    "reasoning_effort": "high",
+    "tool_call_format": "xml"
+  }
+}

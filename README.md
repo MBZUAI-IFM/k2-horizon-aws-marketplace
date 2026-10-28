@@ -17,7 +17,6 @@ The first example uses the [K2 Horizon 7B FP8 checkpoint](https://huggingface.co
 | Configuration | Total context | SageMaker instance | GPUs |
 | --- | ---: | --- | --- |
 | `32k` | 32,768 tokens | `ml.g6.2xlarge` | 1 NVIDIA L4 |
-| `64k` | 65,536 tokens | `ml.g6.12xlarge` | 4 NVIDIA L4 |
 
 Use only configurations supported by the selected Marketplace version. The total context includes input, conversation history, tool definitions, generated reasoning and the final answer. This example uses one active sequence, FP8 weights and BF16 activations and KV cache.
 
@@ -32,7 +31,7 @@ Use only configurations supported by the selected Marketplace version. The total
 
    Alternatively, clone this repository and install `requirements.txt` in your Python environment.
 
-3. Set `PACKAGE_ARN` in the setup cell, or provide the `K2_MODEL_PACKAGE_ARN` environment variable. Select `DEPLOYMENT_PROFILE`; the default is `32k`.
+3. Set `PACKAGE_ARN` in the setup cell, or provide the `K2_MODEL_PACKAGE_ARN` environment variable. The `32k` deployment profile applies the tested 32,768-token settings automatically.
 4. Run the cells in order. The notebook deploys an endpoint, runs the inference examples and cleans up the resources it creates. The batch section runs a separate temporary job; set `RUN_BATCH=False` to skip it.
 
 The notebook uses the standard AWS credential chain and detects the SageMaker execution role. Outside SageMaker, configure AWS credentials and set `SAGEMAKER_EXECUTION_ROLE_ARN`. Never put access keys in the notebook.
@@ -46,6 +45,12 @@ The model has no software fee. AWS compute, storage and other infrastructure cha
 Keep the notebook running until cleanup confirms deletion. If execution is interrupted, retain the printed resource names and rerun `cleanup(session, resources)` or `cleanup_batch(session, batch_resources)`. Verify that the endpoint is deleted or the batch job is terminal before leaving. A local timeout does not stop AWS billing.
 
 Setting `EXISTING_ENDPOINT` invokes an endpoint you own without deleting it. The batch example preserves your S3 bucket; object versions may remain if bucket versioning is enabled.
+
+## Samples and model details
+
+- [Real-time input](samples/k2-horizon-7b-fp8/realtime-input.json) and [actual output](samples/k2-horizon-7b-fp8/realtime-output.json).
+- [Batch input](samples/k2-horizon-7b-fp8/batch-input.json) and [actual output](samples/k2-horizon-7b-fp8/batch-output.json).
+- [Training, evaluation and deployment latency](docs/k2-horizon-7b-fp8.md), with [latency input](samples/k2-horizon-7b-fp8/latency-input.json) and [measurement](samples/k2-horizon-7b-fp8/latency-measurement.json).
 
 ## Model and support
 
